@@ -69,16 +69,6 @@ routes: [
 ],
 ```
 
-Enable the `polyfillNode` flag in the `packageOptions` of your Snowpack config.
-
-```js
-// snowpack.config.js
-packageOptions: {
-  polyfillNode: true,
-  // Other package options...
-},
-```
-
 ### 4. Start React Cosmos with Snowpack
 
 With this setup, Cosmos requires your regular Snowpack dev server to also be running. This could improve in the future, but for now...
