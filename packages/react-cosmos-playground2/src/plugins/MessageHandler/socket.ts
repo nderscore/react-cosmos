@@ -1,11 +1,11 @@
-import io from 'socket.io-client';
+import { io, Socket } from 'socket.io-client';
 import { Message } from 'react-cosmos-shared2/util';
 import { SERVER_MESSAGE_EVENT_NAME } from 'react-cosmos-shared2/build';
 import { RENDERER_MESSAGE_EVENT_NAME } from 'react-cosmos-shared2/renderer';
 import { CoreSpec } from '../Core/public';
 import { MessageHandlerContext } from './shared';
 
-let socket: void | SocketIOClient.Socket;
+let socket: void | Socket;
 
 export function initSocket(context: MessageHandlerContext) {
   const core = context.getMethodsOf<CoreSpec>('core');

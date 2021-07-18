@@ -1,5 +1,5 @@
 import http from 'http';
-import ioServer from 'socket.io';
+import { Server as ioServer } from 'socket.io';
 import {
   BuildMessage,
   SERVER_MESSAGE_EVENT_NAME,
@@ -7,7 +7,7 @@ import {
 import { RENDERER_MESSAGE_EVENT_NAME } from 'react-cosmos-shared2/renderer';
 
 export function createMessageHandler(httpServer: http.Server) {
-  const io = ioServer(httpServer);
+  const io = new ioServer(httpServer);
 
   io.on('connection', socket => {
     // Forward commands between connected clients. Parties involved can be the
@@ -23,9 +23,8 @@ export function createMessageHandler(httpServer: http.Server) {
   }
 
   function cleanUp() {
-    const { sockets } = io.sockets;
-    Object.keys(sockets).forEach(id => {
-      sockets[id].disconnect(true);
+    io.sockets.sockets.forEach(socket => {
+      socket.disconnect(true);
     });
   }
 

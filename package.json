@@ -67,8 +67,6 @@
     "@types/react-test-renderer": "^17.0.1",
     "@types/rimraf": "^3.0.0",
     "@types/slash": "^3.0.0",
-    "@types/socket.io": "^2.1.13",
-    "@types/socket.io-client": "^1.4.35",
     "@types/styled-components": "^5.1.10",
     "@types/url-parse": "^1.4.3",
     "@types/util.promisify": "1.0.4",
